@@ -1,0 +1,182 @@
+
+
+@import './setting.css';
+
+main{
+    width: 400px;
+    height: 550px;
+    margin: 155px auto;
+    box-sizing: border-box;
+    border: 1px solid rgba(224, 224, 230);
+    border-radius: 8px;
+    outline: unset;
+    padding: 35px 30px;
+    
+}
+
+main>div.logo{
+    height: 40px;
+    text-align: center;
+}
+
+main>div.title{
+    height: 105px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+main>div.title>h1{
+    font-size: 19px;
+    font-family: yekan;
+    color:rgb(8, 10, 56);
+    font-weight: 700;
+   text-align: right;
+
+}
+
+main>div.title>h1>span{
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    width: 2.2px;
+    background-color:rgb(8, 10, 56); 
+    height: 20px;
+    vertical-align: middle;
+   
+}
+
+main>div.title>p.top-p{
+    font-size:12px;
+    font-family: yekan;
+    font-weight:400 ;
+    color: #3F4064;
+    margin-top: 32px;
+    text-align: right;
+}
+main>div.title>p.bottom-p{
+    font-size:12px;
+    font-family: yekan;
+    font-weight:400 ;
+    color: #3F4064;
+    margin-top: 14px;
+    text-align: right;
+    
+}
+main>form{
+    height: 160px;
+    width: 335px;
+    margin-top: 25px;
+}
+
+
+main>form>label{
+    height: 160px;
+    width: 335px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+main>form>label>input[type=text]{
+    height: 47px;
+    width: 333px;
+    border: 1px solid rgb(25, 191, 211);
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: block;
+    font-size: 15px;
+    font-family: yekan;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    color: #3F4064;
+    
+}
+
+main>form>label>input[type=email]{
+    height: 47px;
+    width: 333px;
+    border: 1px solid rgb(25, 191, 211);
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: block;
+    font-size: 15px;
+    font-family: yekan;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    color: #3F4064;
+    
+}
+
+main>form>label>input[type=password]{
+    height: 47px;
+    width: 333px;
+    border: 1px solid rgb(25, 191, 211);
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: block;
+    font-size: 15px;
+    font-family: yekan;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    color: #3F4064;
+    
+}
+
+main>form>label>input[type=text]:focus{
+   border: 1px solid #D32F2F;
+   outline: unset;
+}
+main>form>label>p{
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: yekan;
+    font-weight: 400;
+    color: rgb(178, 0, 26);
+    margin-top: 3px;
+    text-align:right;
+}
+
+main>form>label>a{
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: yekan;
+    font-weight: 400;
+    color: rgb(178, 0, 26);
+    margin-top: 3px;
+    text-align:right;
+}
+
+main>form>label>input[type=submit]{
+    width: 333px;
+    height: 47px;
+    margin-top:35px;
+    text-align: center;
+    border-radius:8px;
+    background-color: rgb(239, 64, 86);
+    color: white;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size:14px ;
+    font-family:yekan ;
+    border: unset;
+    
+}   
+
+
+
+main>p.end{
+    font-size:11px;
+    font-weight: 400;
+    font-family: yekan;
+    color: rgb(63, 64, 100);
+    margin-top: 1px;
+    line-height: 2.17;
+    box-sizing: border-box;
+}
+main>p.end>a{
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 400;
+    font-family: yekan;
+    color: #008eb2 ;
+    cursor: pointer;
+    box-sizing: border-box;
+}

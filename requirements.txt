@@ -1,0 +1,4 @@
+flask
+werkzeug
+hashlib
+sqlite3

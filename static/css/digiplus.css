@@ -1,0 +1,205 @@
+
+div.digiplus{
+    width:1304px ;
+    height:388px ;
+    margin-top: 24px;
+    padding: 16px 16px;
+    box-sizing: border-box;
+    background-color: rgb(148, 27, 128);
+    border-radius: 16px;
+    right: calc(50% - 1304px / 2);
+    position: relative;
+}
+
+div.digiplus>div.right-digiplus{
+    width: 392px;
+    height: 356px;
+    padding-top: 24px;
+    box-sizing: border-box;
+    position: absolute;
+    background-image: url("../images/digiplus/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:372px 279px;
+    background-position-x: 0px;
+    background-position-y: 100%;
+    
+}  
+
+div.digiplus>div.right-digiplus>div{
+    width: 392px;
+    height: 114px;
+    padding-right: 24px;
+    box-sizing: border-box;
+}
+div.digiplus>div.right-digiplus>div>a{
+    width:128px ;
+    height:32px ;
+    display: inline-block;
+}
+div.digiplus>div.right-digiplus>div>a>svg{
+    width: 128px;
+    height: 32px;
+}
+div.digiplus>div.right-digiplus>div>p{
+    width:208px;
+    height:30.1px ;
+    font-size:14px;
+    font-family:yekan ;
+    font-weight: 400;
+    color: white;
+    line-height:30.1px ;
+    margin-top: 4px;
+}
+div.digiplus>div.right-digiplus>div>a.digi-login{
+    width: 106px;
+    height: 35.64px;
+    box-sizing: border-box;
+    border-radius:8px;
+    border: .8px solid white;
+    display: inline-block;
+    padding: 4px 16px;
+    text-decoration: none;
+   line-height: 20.64px;
+}
+div.digiplus>div.right-digiplus>div>a.digi-login>p{
+    font-size:12px ;
+    font-family:yekan;
+    font-weight:700;
+    color: white;
+    display: inline-block;
+}
+div.digiplus>div.right-digiplus>div>a.digi-login>i{
+    color: white;
+    font-size: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+div.digiplus>div.left-digiplus{
+    width:868px;
+    height:356px;
+    box-sizing: border-box;
+    padding-left: 16px 0px;
+    background-color:white;
+    position: absolute;
+    left:16px;
+    border-radius: 8px;
+
+}
+
+div.digiplus>div.left-digiplus>div.left-digiplus-top{
+    width:836px;
+    height: 34.4px;
+    box-sizing: border-box;
+    position: absolute;
+    top:16px;
+    bottom: 16px;
+    left: 16px;
+}
+div.digiplus>div.left-digiplus>div.left-digiplus-top>span.left-digiplus-topright{
+    width:152px;
+    height:34.4px;
+    font-size:15px ;
+    font-family: yekan;
+    font-weight:700 ;
+    color:rgb(8, 10, 56) ;
+    display: inline-block;
+    position: absolute;
+    box-sizing: border-box;
+
+   
+}
+div.digiplus>div.left-digiplus>div.left-digiplus-top>span.left-digiplus-topright>i{
+    font-size: 13px;
+    color:rgb(177, 43, 164);
+    margin-left: 8px;
+
+}
+
+div.digiplus>div.left-digiplus>div.left-digiplus-top>span.left-digiplus-topleft{
+    width: 86px;
+    height: 26.038px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 1px;
+    display: inline-block;
+    box-sizing: border-box;
+
+}
+div.digiplus>div.left-digiplus>div.left-digiplus-top>span.left-digiplus-topleft>p{
+    color: rgb(177, 43, 164);
+    font-size:12px ;
+    font-family:yekan ;
+    font-weight:700 ;
+   display: inline-block;
+
+}
+div.digiplus>div.left-digiplus>div.left-digiplus-top>span.left-digiplus-topleft>i{
+    color: rgb(177, 43, 164);
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+div.digiplus>div.left-digiplus>div.left-digiplus-bottom{
+    width: 836px;
+    height: 270px;
+    bottom: 20px;
+    margin-top: 60px;
+   
+    margin-right:16px;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+div.digiplus>div.left-digiplus>div.left-digiplus-bottom>div.left-digiplus-bottom-1{
+    width: 836px;
+    height:135px;
+    
+    position: absolute;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    
+}
+div.digiplus>div.left-digiplus>div.left-digiplus-bottom>div.left-digiplus-bottom-2{
+    width: 836px;
+    height:135px;
+  
+    position: absolute;
+    top:135px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+div.digiplus>div.left-digiplus>div.left-digiplus-bottom>div.left-digiplus-bottom-1>a{
+    width:116px;
+    height:116px;
+    display:inline-block;
+    position:relative;
+    
+    margin-left: 20px;
+   
+
+    
+}
+div.digiplus>div.left-digiplus>div.left-digiplus-bottom>div.left-digiplus-bottom-2>a{
+    width:116px;
+    height:116px;
+    display:inline-block;
+    position:relative;
+    background-color: white;
+    margin-left: 20px;
+    margin-top: 10px;
+
+    
+}
+
+div.digiplus>div.left-digiplus>div.left-digiplus-bottom>div.left-digiplus-bottom-1>a>img{
+    width: 116px;
+    height: 116px;
+}
+
+div.digiplus>div.left-digiplus>div.left-digiplus-bottom>div.left-digiplus-bottom-2>a>img{
+    width: 116px;
+    height: 116px;
+}

@@ -1,0 +1,31 @@
+
+div.countainers-1{
+    width:1304px;
+    height:236px;
+    margin-top: 24px;
+    
+    margin-right: calc(50% - 1304px / 2);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  
+}
+div.countainers-1>div.img-countainers-1{
+    width:314px;
+    height:236px;
+    box-sizing: border-box;
+    border-radius:16px;
+    display:inline-block;
+    
+}
+div.countainers-1>div.img-countainers-1>img{
+    width:314px;
+    height:235px;
+    box-sizing:border-box;
+    border-radius:16px;
+    display:inline-block;
+    
+}
+
+div.countainers-1>div.img-2-countainers-1{
+    margin-right: 12px;
+}

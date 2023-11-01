@@ -1,0 +1,192 @@
+
+div.amazing-slider{
+    height: 300px;
+    width: 1304px;
+    top: 24px;
+    padding: 20px 2px;
+    box-sizing: border-box;
+    right: calc(50% - 1304px / 2);
+    background-color: #ef394e;
+    border-radius: 16px 16px;
+    position: relative;
+    
+}
+
+
+
+div.amazing-slider>div.slider-2{
+    width: 1300px;
+    height: 260px;
+    display: inline-block;
+    position: absolute;
+
+}
+
+div.amazing-slider>div.slider-2>.test-1{
+    width: inherit;
+    height: inherit;
+    box-sizing: border-box;
+    border-left: 3px solide #ef394e;
+}
+
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.right-side{
+    width: 173px;
+    height: 260px;
+   
+    background-color: #ef394e;
+    display: block;
+   
+ 
+
+    box-sizing: border-box;
+    text-align: center;
+}
+
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.right-side>svg{
+    display: block;
+    margin: 10px auto;
+    width: 92px;
+    height: 77px;
+}
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.right-side>img{
+    width:145px;
+    height:115px;
+    display: block;
+    top: 8px;
+    position: relative;
+    right: 10px;
+  
+}
+
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.right-side>a{
+    display: block;
+    
+    margin-top: 20px;
+    text-decoration: none;
+    font-family: yekan;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    box-sizing: border-box;
+    cursor: pointer;
+    align-items: center;
+    vertical-align:middle;
+    
+}
+
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.right-side>a>i{
+    font-size: 12px;
+    margin-right: 4px;
+    
+}
+
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.swiper-slide{
+    width: 182px;
+    height: 260px;
+    background-color:white;
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.first-swiper{
+    border-top-right-radius:8px ;
+    border-bottom-right-radius: 8px;
+}
+    
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.swiper-slide>div>img{
+    width:150px ;
+    height:150px ;
+    margin-bottom: 4px;
+    display: block;
+}
+
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.swiper-slide>div.new-price{
+    width: 150px;
+    height: 34.44px;
+    padding-top: 4px;
+    box-sizing: border-box;
+    text-align: left;
+   
+}
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.swiper-slide>div.new-price>span.price{
+    width: 111px;
+    height: 34.44px;
+    font-size:16px;
+    font-family: yekan;
+    font-weight:700;
+    color: rgb(63, 64, 100);
+    display:inline-block;
+    line-height: 34.44px;
+    
+}
+
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.swiper-slide>div.new-price>span.price>span{
+    width: 16px;
+    height: 16px;
+    font-family: yekan;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    color:rgb(63, 64, 100) ;
+   
+}
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.swiper-slide>div.new-price>span.precentage{
+    display: inline-block;
+    color: white;
+    width: 34px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: yekan;
+    background-color: rgb(239, 57, 78);
+    border-radius: 16px;
+    box-sizing: border-box;
+    justify-content: center;
+    cursor: pointer;
+    line-height:20px;
+   text-align: center;
+}
+
+div.amazing-slider>div.slider-2>div.test-1>div.swiper-wrapper>div.swiper-slide>div.old-price{
+    width: 150px;
+    height: 26.4px;
+    font-size:12px;
+    font-weight: 400;
+    line-height:26.4px;
+    font-family: yekan;
+    color: rgb(195, 195, 206);
+    text-decoration: line-through;
+    padding-left: 20px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+div.last-swiper>div{
+    width: 45.6px;
+    height: 45.6px;
+   
+}
+
+div.last-swiper>div>i{
+ color: rgb(25, 191, 211);
+ font-size: 50px;
+}
+
+div.last-swiper>span{
+    display: block;
+    font-size:20px;
+    font-family: yekan;
+    font-weight:700 ;
+    color: rgb(63, 64, 100);
+    margin-top: 16px;
+    cursor: pointer;
+}

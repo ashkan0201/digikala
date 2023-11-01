@@ -1,0 +1,15 @@
+
+div.countainers-6{
+    width:1304px;
+    height:163px;
+    margin-top: 24px;
+    margin-right: calc(50% - 1304px / 2);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+div.countainers-6>div>img{
+    width: 1304px;
+    height: 163px;
+    border-radius: 16px;
+    box-sizing: border-box;
+}

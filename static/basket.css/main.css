@@ -1,0 +1,79 @@
+@import'./setting.css';
+
+*{
+    padding: 0;
+    margin: 0;
+}
+div.buy{
+    width: 120px;
+    height: 20px;
+    margin-left: 1200px;
+    margin-top: 40px;
+}
+div.buy>a{
+text-decoration: none;
+font-family: yekan;
+color: #2b2b2b;
+}
+div.buy>div.line{
+    width: 1200px;
+    height: 1px;
+    background-color: #aca8a8;
+ margin-left: -1120px;
+ margin-top: 30px;
+ box-shadow: 3px lightslategrey;
+}
+div.bottom{
+    width: 870px;
+    height: 400px;
+margin-top: 50px;
+margin-left: 410px;
+    border: 1px solid #aca8a8;
+    border-radius: 15px;
+}
+
+div.bottom>div.image>img{
+    width: 250px;
+    height: 300px;
+    margin-left: 300px;
+}
+div.bottom>div.image>span{
+    font-family: yekan;
+    font-size: 20px;
+    margin-left: -240px;
+}
+div.bottom>div.left{
+    width: 300px;
+    height: 150px;
+    margin-left: -330px;
+    margin-top: -310px;
+    border: 1px solid #aca8a8;
+    border-radius: 15px;
+}
+div.bottom>div.left>a{
+    height: 15px;
+    width: 200px;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: yekan;
+    margin-left: 40px;
+    margin-top: 30px;
+    position: absolute;
+    color: #2b2b2b;
+}
+div.bottom>div.left h2{
+    font-size: 27px;
+margin-top: 25px;
+margin-left: 15px;
+}
+div.bottom>div.left h1{
+  width: 270px;
+  height: 20px;
+    font-size: 10px;
+    font-family: yekan;
+text-align: right;
+opacity: 0.7;
+line-height: 25px;
+margin-left: 12px;
+color: #747070;
+}

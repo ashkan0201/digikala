@@ -1,0 +1,112 @@
+
+div.electronic-devices{
+    width:1304px ;
+    height:421px;
+    margin-top: 24px;
+    border: .8px solid  rgb(224, 224, 230);
+    box-sizing: border-box;
+    margin-right: calc(50% - 1304px / 2);
+   
+    border-radius: 16px;
+}
+
+div.electronic-devices>div.devices-1{
+    width:321.85px;
+    height:418.75px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    display: inline-block;
+    border-left:.8px solid  rgb(224, 224, 230);
+}
+
+div.electronic-devices>div.devices-4{
+    border-left: none !important;
+}
+
+div.electronic-devices>div.devices-1>div.devices-title{
+    width:285.850px ;
+    height:58.263px;
+    margin-bottom: 8px;
+}
+div.electronic-devices>div.devices-1>div.devices-title>h4{
+    font-size:16px ;
+    font-family:yekan ;
+    font-weight:700 ;
+    color: rgb(35, 37, 78);
+    line-height: 34.4px;
+}
+div.electronic-devices>div.devices-1>div.devices-title>p{
+    font-size:11px;
+    font-family: yekan;
+    font-weight:400;
+    color:rgb(118, 119, 144) ;
+    line-height:23.87px;
+}
+div.electronic-devices>div.devices-1>div.accessories{
+    width: 284.85px;
+    height: 294.45px;
+    
+}
+
+div.electronic-devices>div.devices-1>div.accessories>a.x-accessories{
+    width:139.93px;
+    height:147.73px;
+    box-sizing: border-box;
+    border-left: .8px solid  rgb(224, 224, 230) ;
+    border-bottom: .8px solid  rgb(224, 224, 230);
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top:8px ;
+    padding-right: 4px;
+   
+}
+
+div.electronic-devices>div.devices-1>div.accessories>a.a-3{
+    border-bottom: none !important; 
+}
+div.electronic-devices>div.devices-1>div.accessories>a.a-4{
+    border-bottom: none !important; 
+    border-left: none !important;
+}
+div.electronic-devices>div.devices-1>div.accessories>a.a-2{
+    border-left: none !important; 
+}
+
+div.electronic-devices>div.devices-1>div.accessories>a.x-accessories>img{
+    width: 126px;
+    height: 126px;
+}
+
+div.electronic-devices>div.devices-1>div.observation{
+    width: 284.85px;
+    height: 26.038px;
+    margin-top: 4px;
+    margin-top: 12px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+div.electronic-devices>div.devices-1>div.observation>a{
+    display: inline-block;
+    text-decoration: none;
+    
+}
+
+div.electronic-devices>div.devices-1>div.observation>a>span{
+    display: inline-block;
+    color:rgb(25, 191, 211) ;
+    font-size:12px;
+    font-family:yekan ;
+    font-weight:700;
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: 26.04px;
+}
+
+div.electronic-devices>div.devices-1>div.observation>a>i{
+    font-size:13px;
+    color:rgb(25, 191, 211)  ;
+    vertical-align: middle;
+    margin-right: -3px;
+}

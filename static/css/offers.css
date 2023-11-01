@@ -1,0 +1,82 @@
+
+div.offers{
+    width:1304px;
+    height:395px;
+    margin-top: 24px;
+   
+    margin-right: calc(50% - 1304px /2);
+}
+
+div.offers>div.title-3>h2{
+    padding:16px 0px;
+    font-size:21px ;
+    font-family:yekan;
+    font-weight:500 ;
+    color:rgb(8, 10, 56) ;
+    text-align: center;
+    box-sizing: border-box;
+}
+div.offers>div.offers-products{
+    width: 1304px;
+    height: 311px;
+    margin-top:8px;
+    box-sizing: border-box;
+    border: .800px solid rgb(224, 224, 230);
+    border-radius: 16px;
+}
+
+div.offers>div.offers-products>div{
+    width:1304px;
+    height:154.1px;
+    padding:16px 4px 16px 4px;
+    box-sizing: border-box;
+    border-bottom: .8px solid rgb(231, 233, 236); 
+    text-align: center;
+    align-items: center;
+}
+
+div.offers>div.offers-products>div>a{
+    width:177.375px;
+    height:122.100px;
+    box-sizing: border-box;
+   
+    display:inline-block;
+    text-align: center;
+    text-decoration: none;
+    border-left: .8px solid  rgb(231, 233, 236); 
+    
+}
+
+div.offers>div.offers-products>div>a>div{
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color:rgb(241, 242, 244);
+    text-align: center;
+    margin:0 auto;
+    overflow:hidden;
+    list-style-image: none;
+    list-style-type: none;
+    
+}
+
+div.offers>div.offers-products>div>a>div>img{
+    width:60px ;
+    height: 60px;
+    text-align: center;
+    margin:10px auto ;
+    z-index: 1;
+    background-color:#0000000D;
+    color: black;
+    list-style-image: none;
+    list-style-type: none;
+}
+
+div.offers>div.offers-products>div>a>h4{
+    color:rgb(8, 10, 56) ;
+    font-size:14px ;
+    font-family:yekan;
+    font-weight:400 ;
+    margin-top:8px;
+}

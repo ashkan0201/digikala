@@ -1,0 +1,80 @@
+
+div.story-2{
+    width:inherit ;
+    height:95.86px ;
+    padding:8px 12px;
+    box-sizing: border-box;
+ 
+    margin-top: 24px;
+    margin-left: 112px;
+    margin-right: 112px;
+    text-align: center;
+
+}
+
+div.story-2>div{
+    width: 62.53px;
+    height: 79.86px;
+    margin-left: 10px;
+    margin-right: 45px;
+    display: inline-block;
+    vertical-align: top;
+}   
+
+div.story-2>div>a{
+    width: 62.53px;
+    height: 79.86px;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+   
+}
+div.story-2>div>a>img{
+    width: 52px;
+    height: 52px;
+   
+}
+
+div.story-2>div>a>span{
+    width: 98px;
+    font-family: yekan;
+    color:rgb(63, 64, 100);
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    margin-top: 4px;
+    margin-right: -17px;
+    box-sizing: border-box;
+}
+
+div.story-2>div>div.dots{
+    width: 52px;
+    height: 52px;
+    background-color: rgb(241, 242, 244);
+    border-radius: 50%;
+    margin-bottom: 4px;
+    cursor: pointer;
+    
+}
+
+div.story-2>div>div.dots>i{
+   color: rgb(158, 159, 177);
+    line-height: 52px;
+   font-size: 30px;
+}
+div.story-2>div>span.more-dots{
+    width: 98px;
+    font-family: yekan;
+    color:rgb(63, 64, 100);
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    margin-top: 8px;
+    display: block;
+    box-sizing: border-box;
+    padding-left: 42px;
+}

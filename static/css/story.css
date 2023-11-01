@@ -1,0 +1,46 @@
+div.story{
+    width: 100%;
+    height: 145px;
+    padding-right: 142.5px;
+    box-sizing: border-box;
+}
+
+div.story>div{
+    width: 75px;
+    height: 98.75px;
+    margin: 20px 40px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+div.story>div>a{
+    width: 75px;
+    height: 98.75px;
+    cursor: pointer;
+    text-decoration: none;
+  
+}
+div.story>div>a>img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    outline: 3px solid rgb(237, 27, 52);
+    outline-offset: 3px;
+    box-sizing: border-box;
+    margin-right: -20px;
+}
+
+div.story>div>a>span{
+    width: 75px;
+    height: 16.25px;
+    display: block;
+    font-size:13px ;
+    font-family: yekan;
+    font-style: normal;
+    color:rgb(51, 51, 51) ;
+    margin-top:7.5px ;
+    cursor: pointer;
+    line-height:16px ;
+    text-align: center;
+    margin-right: -20px;
+}

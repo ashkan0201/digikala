@@ -1,0 +1,464 @@
+
+header{
+    width:100%;
+    height: 170px;
+    box-shadow:0 1px 2px #E0E0E0;
+    
+
+   
+    background-color: white;
+}
+
+
+
+header>div.top{
+    width: inherit;
+    height: 60px;
+    position:fixed;
+    top: 0;
+    z-index: 100;
+}
+header>div.top>a{
+    width: inherit;
+    height: inherit;
+    display: inline-block;
+    text-decoration: none;
+}
+header>div.top>a>img{
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    
+}
+
+header>div.bottom{
+    width: inherit;
+    height: 110px;
+    
+
+}
+
+header>div.bottom>div.bottomTop{
+    width: inherit;
+    height: 70px;
+    position:fixed;
+    top:60px;
+    z-index: 100;
+    background-color: white;
+}
+
+header>div.bottom>div.bottomBottom{
+    width: inherit;
+    height: 40px;
+    position: relative;
+    top: 130px;
+   
+}
+
+header>div.bottom>div.bottomTop>div.logo{
+    width: 10%;
+    height: inherit;
+   
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+   
+}
+header>div.bottom>div.bottomTop>div.search{
+    width:75%;
+    height:inherit ;
+    display: inline-block;
+    margin-right: -4px;
+    vertical-align: top;
+}
+
+header>div.bottom>div.bottomTop>div.register{
+    width:15%;
+    height:inherit ;
+    position: relative;
+    display: inline-block;
+    margin-right: -4px;
+    vertical-align: top;
+}
+
+header>div.bottom>div.bottomTop>div.logo>svg{
+    width: 115px;
+    margin-top: 20px;
+}
+
+header>div.bottom>div.bottomTop>div.logo>svg{
+    fill: crimson;
+}
+
+header>div.bottom>div.bottomTop>div.search>div.search-2{
+    width: 600px;
+    height: 45px;
+    font-family:yekan;
+    outline: unset;
+    margin-top: 15px;
+    padding: 0px 20px;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: unset;
+    font-size: 12px;
+    background-color:#f1f2f4;
+}
+
+header>div.bottom>div.bottomTop>div.search>div.search-2>[type=search]{
+    width: 512px;
+    height: 26px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    margin: 10px 0px;
+    border: unset;
+    outline: unset;
+    font-size: 12px;
+    background-color:#f1f5f5 ;
+    font-family: yekan;
+
+}
+
+header>div.bottom>div.bottomTop>div.search>div.search-2>i{
+   font-size: 20px;
+   color:#9E9FB1 ;
+   vertical-align: middle;
+   
+}
+
+header>div.bottom>div.bottomTop>div.search>div.test-1>[type=search]::placeholder{
+    font-size:12px;
+    font-family: yekan;
+    font-weight: bold;
+    color: #9E9FB1;
+}
+
+header>div.bottom>div.bottomTop>div.register>a.login{
+    display:inline-block;
+    width: 135px;
+    height: 40px;
+    border: 1px solid #e0e0e6;
+    border-radius:10px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    font-family: yekan;
+    font-size: 11px;
+    font-weight: bold;
+    color: #2b2b2b;
+    margin-top:20px;
+    margin-left: 12px;
+
+}
+
+header>div.bottom>div.bottomTop>div.register>a.login>i{
+    font-size: 20px;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+header>div.bottom>div.bottomTop>div.register>a.login>span{
+    margin-right: 5px;
+    vertical-align: middle;
+    font-family: yekan;
+}
+header>div.bottom>div.bottomTop>div.register>a.login>span:nth-of-type(2){
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    width: 1px;
+    background-color: #2b2b2b;
+    height: 13px;
+   font-family: yekan;
+}
+
+header>div.bottom>div.bottomTop>div.register>span{
+    font-size: 20px;
+    color:rgb(224, 224, 230);
+    vertical-align:middle ;
+    margin-left: 12px;
+    display: inline-block;
+    background-color:rgb(224, 224, 230) ;
+    height: 25px;
+    width: 1.5px;
+    font-family: yekan;
+}
+
+header>div.bottom>div.bottomTop>div.register>a.shop{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+header>div.bottom>div.bottomTop>div.register>a.shop>i{
+   font-size: 20px;
+   vertical-align: middle;
+    color:#2b2b2b;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+}
+
+
+header>div.bottom>div.bottomBottom{
+    width: 100%;
+    height: 40px;
+    
+}
+
+
+header>div.bottom>div.bottomBottom>nav{
+    width: inherit;
+    height: inherit;
+    padding: 0 16px;
+    box-sizing: border-box;
+    position: relative;
+    
+}
+
+header>div.bottom>div.bottomBottom>nav>div{
+    display: inline-block;
+    width: fit-content;
+    height: inherit;
+    transition: 500ms;
+    box-sizing: border-box;
+    position: relative;
+}
+
+header>div.bottom>div.bottomBottom>nav>div ~ div.effect{
+    width: 1px;
+    display:inline-block;
+    padding: 0px 16px;
+    height: 1px;
+    background-color: rgb(27, 24, 25);
+    position: absolute;
+    right:-100px;
+    bottom: 0;
+    transition: 300ms;
+}
+
+header>div.bottom>div.bottomBottom>nav>div:hover:nth-of-type(1) > div.effect{
+    right: 20px;
+    width: 140.73px;
+}
+
+header>div.bottom>div.bottomBottom>nav>div:hover:nth-of-type(2) > div.effect{
+    right: 170px;
+    width: 110.85px;
+}
+header>div.bottom>div.bottomBottom>nav>div:hover:nth-of-type(3) > div.effect{
+    right: 293px;
+    width: 90.41px;
+}
+header>div.bottom>div.bottomBottom>nav>div:hover:nth-of-type(4) > div.effect{
+    right: 395px;
+    width: 90.43px;
+}
+
+header>div.bottom>div.bottomBottom>nav>div:hover:nth-of-type(5) > div.effect{
+    right: 504px;
+    width: 105.31px;
+}
+header>div.bottom>div.bottomBottom>nav>div:hover:nth-of-type(6) > div.effect{
+    right: 620px;
+    width:156.94px;
+}
+header>div.bottom>div.bottomBottom>nav>div:hover:nth-of-type(7) > div.effect{
+    right: 790px;
+    width: 80.79px;
+}
+header>div.bottom>div.bottomBottom>nav>div:hover:nth-of-type(8) > div.effect{
+    right: 880px;
+    width:131.09px;
+}
+header>div.bottom>div.bottomBottom>nav>div>a{
+   display: block;
+   width: inherit;
+   height: inherit;
+   padding: 0 12px;
+   box-sizing: border-box;
+   text-decoration: none;
+   line-height: 40px;
+   font-family: yekan;
+   font-size: 12px;
+   font-weight: 400px;
+   cursor: pointer;
+   color: rgb(90, 92, 122);
+}
+
+header>div.bottom>div.bottomBottom>nav>div>a>i{
+    font-size: 14px;
+    margin-left: 5px;
+    display: inline-block;
+    line-height: middle;
+    color:#2b2b2b;
+}
+
+header>div.bottom>div.bottomBottom>nav>div>a.test-1>i{
+
+    font-size: 14px;
+    margin-left: 5px;
+    display: inline-block;
+    line-height: middle;
+    color:#3F4064 ;
+}
+
+header>div.bottom>div.bottomBottom>nav>div>a.test-1{
+    display: block;
+    width: inherit;
+    height: inherit;
+    padding: 0 12px;
+    cursor: pointer;
+    font-family: yekan;
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 40px;
+    color:#3F4064 ;
+    font-size: 14px;
+    font-family: 700px;
+}
+
+
+header>div.bottom>div.bottomBottom>nav>span{
+    color:rgb(224, 224, 230);
+}
+
+header>div.bottom>div.bottomBottom>nav>div.location{
+    width: fit-content;
+    height: 40px;
+    padding-bottom: 4px;
+    box-sizing: border-box;
+    margin-right: 320px;
+    display: inline-block;
+   box-sizing: border-box;
+   position: relative;
+   right: 800px;
+bottom: 30px;
+
+}
+
+header>div.bottom>div.bottomBottom>nav>div.location>label[for=show]{
+    
+    width: fit-content;
+    height:40px;
+    color: rgb(53, 52, 52);
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: yekan;
+    font-weight: 400;
+    display: block;
+   position: relative;
+    
+    
+}
+header>div.bottom>div.bottomBottom>nav>div.location>label[for=show]>i{
+    margin-left: 8px;
+}
+#show,#close{
+    display: none;
+}
+#show:checked ~ div.show{
+    display: block;
+}
+header>div.bottom>div.bottomBottom>nav>div.location>div.show{
+    width: 460px;
+    height: 550px;
+    overflow: auto;
+    background-color: white;
+    z-index: 100;
+    position: relative;
+    top:-100px;
+    left:720px;
+    display: none;
+    border-radius: 8px;
+    overflow-x: hidden;
+}
+
+header>div.bottom>div.bottomBottom>nav>div.location>div.show>div.top-show{
+    width: inherit;
+    height: 59.2px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    border-top: .8px solid rgb(224, 224, 230);
+    line-height: 59px;
+    display: inline-block;
+    
+    
+}
+header>div.bottom>div.bottomBottom>nav>div.location>div.show>div.top-show>p{
+    color: rgb(8, 10, 56) ;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: yekan;
+}
+header>div.bottom>div.bottomBottom>nav>div.location>div.show>div.top-show>label[for=close]{
+    color: rgb(63, 64, 100);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+
+   position: absolute;
+   left: 12px;
+   top: 18px;
+   text-align: center;
+   line-height: 24px;
+   font-size: 25px;
+   font-weight: 1000;
+   box-sizing: border-box;
+   cursor: pointer;
+}
+
+header>div.bottom>div.bottomBottom>nav>div.location>div.show>div.bottom-show{
+    width: 460px;
+    height: 331px;
+}
+header>div.bottom>div.bottomBottom>nav>div.location>div.show>div.bottom-show>div{
+    width: inherit;
+    height: inherit;
+    padding: 16px 20px;
+    box-sizing: border-box;
+}
+
+
+header>div.bottom>div.bottomBottom>nav>div.location>div.show>div.bottom-show>div>div.span{
+width: 400.2px;
+height: 56.25px;
+}
+header>div.bottom>div.bottomBottom>nav>div.location>div.show>div.bottom-show>div>div>span:nth-of-type(1){
+    width: 400.2px;
+height: 56.25px;
+    color: rgb(25, 191, 211);
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: yekan;
+}
+header>div.bottom>div.bottomBottom>nav>div.location>div.show>div.bottom-show>div>div>span:nth-of-type(1)>i{
+    margin-left: 16px;
+    vertical-align: middle;
+   
+}
+
+header>div.bottom>div.bottomBottom>nav>div.location>div.show>div.bottom-show>div>div.span>span{
+    width: 400.2px;
+    height: 56.25px;
+    color: rgb(63, 64, 100);
+    font-size: 15px;
+    font-weight: 700;
+    font-family: yekan;
+    display: inline-block;
+    box-sizing: border-box;
+    border-bottom: .8px solid  rgb(224, 224, 230);
+   line-height: 56px;
+  
+    
+
+}
+header>div.bottom>div.bottomBottom>nav>div.location>div.show>div.bottom-show>div>div.span>span>i{
+    font-size:13px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 35px;
+    line-height: 56px;
+
+}

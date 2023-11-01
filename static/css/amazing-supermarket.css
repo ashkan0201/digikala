@@ -1,0 +1,140 @@
+
+div.amazing-supermarket{
+    width: 1304px;
+    height: 110px;
+    background-color:rgb(241, 242, 244);
+    margin-right: calc(50% - 1304px / 2);
+    margin-top: 35px;
+    border-radius: 16px;
+    padding: 16px 30px 12px 40px;
+    box-sizing: border-box;
+    display: flex;
+    
+}
+
+div.amazing-supermarket>div.amazing-baners{
+    width: 472.61px;
+    height: 62px;
+    display: inline-block;
+    margin-top: 10px;
+    vertical-align: middle;
+    margin-left: 100px;
+}
+
+div.amazing-supermarket>div.amazing-baners>img{
+    width: 66px;
+    height: 62px;
+    display: inline-block;
+    vertical-align: middle;
+}
+div.amazing-supermarket>div.amazing-baners>div{
+    width: 250px;
+    height: 28px;
+    margin: 0px 16px 0px 20px ;
+    display: inline-block;
+    vertical-align: bottom;
+    vertical-align: middle;
+}
+
+div.amazing-supermarket>div.amazing-baners>span{
+    font-size: 12px;
+    font-family: yekan;
+    font-weight: 700;
+    background-color: rgb(57, 174, 0);
+    width: 106.61px;
+    height: 28px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    line-height: 28px;
+    box-sizing: border-box;
+    padding: 0px 12px;
+    border: .800px;
+    color: white;
+    border-radius: 9999px;
+
+
+}
+
+div.amazing-supermarket>div.amazing-products{
+    width: 512px;
+    height: 74px;
+    display: block;
+    box-sizing: border-box;
+    align-items: center;
+    margin-top: 4px;
+}
+
+div.amazing-supermarket>div.amazing-products>a{
+    width: 74px;
+    height: 74px;
+    display: inline-block;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin-left: 8px;
+    margin-bottom: 16px;
+    position: relative;
+    border-radius: 50%;
+    padding: 8px 8px;
+    background-color: white;
+    align-items: center;
+   
+}
+
+div.amazing-supermarket>div.amazing-products>a>img{
+    width: 58px;
+    height: 58px;
+    border-radius:50%;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+}
+div.amazing-supermarket>div.amazing-products>a>span{
+    width: 34px;
+    height: 20px;
+    background-color: rgb(239, 57, 78);
+    color: white;
+    border-radius: 16px;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: yekan;
+    position: absolute;
+    z-index: 1;
+    left: 40px;
+    top: 54px;
+    line-height: 20px;
+    text-align: center;
+}
+div.amazing-supermarket>div.more-than-100{
+    width:144px ;
+    height:50px;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    background-color: white;
+    border-radius: 9999px;
+   margin-top: 16px;
+}
+
+div.amazing-supermarket>div.more-than-100>span{
+    font-size:12px ;
+    font-family:yekan ;
+    font-weight:700 ;
+    color: rgb(57, 174, 0);
+    cursor: pointer;
+    display: inline-block;
+}
+div.amazing-supermarket>div.more-than-100>div{
+    display: inline-block;
+    margin-right: 3px ;
+    vertical-align: middle;
+}
+div.amazing-supermarket>div.more-than-100>div>i{
+    color:rgb(57, 174, 0) ;
+    
+    font-size:15px;
+}
+

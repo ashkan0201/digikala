@@ -1,0 +1,79 @@
+
+div.countainers-4{
+    width: 1304px;
+    height: 88px;
+    box-sizing: border-box;
+    margin-top: 8px;
+    padding: 12px 16px;
+    background-image: linear-gradient(76.02deg, rgb(53, 166, 200) 33.32%, rgb(0, 114, 149) 71.55%), radial-gradient(21.29% 87.33% at 50% 50.67%, rgb(124, 242, 246) 0px, rgb(53, 166, 200) 100%);
+    margin-right: calc(50% - 1304px / 2);
+    border-radius: 16px;
+}
+div.countainers-4>div.logo-countainers-4{
+    width: 119px;
+    height: 33px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    display: inline-block;
+    line-height: 95px;
+    margin-left: 300px;
+}
+div.countainers-4>div.logo-countainers-4>svg{
+    width: 119px;
+    height: 33px;
+}
+
+div.countainers-4>div.img-countainers-4{
+    width:830px;
+    height:63.2px;
+    display: inline-block;
+    position: absolute;
+    line-height: 118px;
+    
+}
+div.countainers-4>div.img-countainers-4>span.span-countainers-4{
+    width: 273.19px;
+    height: 63.2px;
+    display: inline-block;
+    background-color: white;
+    position: relative;
+}
+
+div.countainers-4>div.img-countainers-4>span.span-countainers-4>h4{
+    width: 86px;
+    height: 26.4px;
+    margin-right: 12px;
+    color: rgb(8, 10, 56);
+    cursor: pointer;
+    font-size: 12px;
+    font-family: yekan;
+    font-weight: 700;
+    position: absolute;
+    line-height:63.2px;
+    display: inline-block;
+    
+}
+
+div.countainers-4>div.img-countainers-4>span.span-countainers-4>h4>i{
+    font-size: 12px;
+    color: rgb(0, 191, 214);
+    margin-left: 8px;
+}
+
+div.countainers-4>div.img-countainers-4>span.span-countainers-4>img{
+    width: 168px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    border-top-left-radius:8px;
+    border-bottom-left-radius: 8px;
+
+}
+div.countainers-4>div.img-countainers-4>span.span-countainers-4-first{
+    border-top-right-radius:8px ;
+    border-bottom-right-radius: 8px;
+}
+div.countainers-4>div.img-countainers-4>span.span-countainers-4-last{
+    border-top-left-radius:8px;
+    border-bottom-left-radius: 8px;
+}

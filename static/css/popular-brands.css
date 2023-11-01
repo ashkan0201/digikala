@@ -1,0 +1,68 @@
+
+div.popular-brands{
+    width:1304px ;
+    height:224px ;
+    
+    margin-right: calc(50% - 1304px / 2);
+    margin-top: 24px;
+    border: .800px solid rgb(224, 224, 230);
+    box-sizing: border-box;
+    padding: 24px 0px;
+    border-radius: 16px;
+}
+
+
+div.popular-brands>div.brands-title{
+    width: 1188px;
+    height: 44px;
+    text-align: center;
+  
+}
+
+div.popular-brands>div.brands-title>div{
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+div.popular-brands>div.brands-title>div>i{
+    font-family: 20px;
+    color:rgb(250,190,40);
+}
+div.popular-brands>div.brands-title>p{
+    display:inline-block;
+    font-size:21px;
+    font-family: yekan;
+    font-weight:500;
+    color:rgb(8, 10, 56);
+    line-height: 44px;
+}
+div.popular-brands>div.swiper-inside{
+    width: 1188px;
+    height: 118px;
+    margin-top:12px;
+}
+
+div.popular-brands>div.swiper-inside>div.swiper-wrapper>div.swiper-slide{
+    width: 142px;
+    height: 118px;
+    box-sizing: border-box;
+    border-left: .4px solid  rgb(241, 241, 244);
+}
+
+div.popular-brands>div.swiper-inside>div.swiper-wrapper>div.swiper-slide>a{
+    width:142px ;
+    height: 118px;
+    padding: 4px 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+div.popular-brands>div.swiper-inside>div.swiper-wrapper>div.swiper-slide>a>img{
+    width: 110px;
+    height: 110px;
+    text-align: center;
+    object-fit: contain;
+    o
+}

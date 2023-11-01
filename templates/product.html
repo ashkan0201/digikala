@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/node_modules/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="static/icons/Web/css/all.min.css" />
+    <link rel="stylesheet" href="static/css/main.css" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon" href="static/images/ico/favicon-16x16.png" type="image/x-icon"/>  
+    <title>digikala</title>
+    <style>
+        @import 'static/setting.css';
+        body {
+            padding: 150px;
+        }
+        .cover {
+            margin-top: 10px; /* Adjusted margin value */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 10px;
+            justify-items: center;
+            background-color: #fff;
+        }
+        .product {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            background-color: #fff;
+            transform: scale(0.9);
+            
+        }
+        .product img {
+            width: 200px;
+            height: 200px;
+        }
+        .product .discount {
+            color: #fff;
+            background-color: red;
+            border-radius: 50%;
+            padding: 5px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .product .price {
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            
+        }
+        .product > h2 {
+            font-size: 21px;
+            font-family: yekan;
+            font-weight: 500;
+            color: black;
+            text-align: center;
+        }
+        .product > a{
+            text-decoration: none;
+        }
+        .add{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <br><br>
+        <div class='logo'>
+            <a href="/user"> <svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" viewBox="0 0 115 30">
+                <g fill="none" fill-rule="evenodd">
+                    <g fill="#EE384E">
+                        <g>
+                            <g>
+                                <path d="M76.916 19.024h6.72v-8.78h-6.72c-1.16 0-2.24 1.061-2.24 2.195v4.39c0 1.134 1.08 2.195 2.24 2.195zm26.883 0h6.72v-8.78h-6.72c-1.16 0-2.24 1.061-2.24 2.195v4.39c0 1.134 1.08 2.195 2.24 2.195zM88.117 6.951v15.366c0 .484-.625 1.098-1.12 1.098l-2.24.023c-.496 0-1.12-.637-1.12-1.12v-.733l-1.017 1.196c-.31.413-1.074.634-1.597.634h-4.107c-3.604 0-6.721-3.063-6.721-6.586v-4.39c0-3.523 3.117-6.585 6.72-6.585h10.082c.495 0 1.12.613 1.12 1.097zm26.883 0v15.366c0 .484-.624 1.098-1.12 1.098l-2.24.023c-.496 0-1.12-.637-1.12-1.12v-.733l-1.017 1.196c-.31.413-1.074.634-1.597.634h-4.107c-3.604 0-6.721-3.063-6.721-6.586v-4.39c0-3.523 3.117-6.585 6.72-6.585h10.082c.495 0 1.12.613 1.12 1.097zm-74.675 3.293h-6.721c-1.16 0-2.24 1.061-2.24 2.195v4.39c0 1.134 1.08 2.195 2.24 2.195h6.72v-8.78zm4.48-3.293V23.78c0 3.523-3.117 6.22-6.72 6.22H34.62c-.515 0-1-.236-1.311-.638l-1.972-2.55c-.327-.424-.144-1.202.399-1.202h6.347c1.16 0 2.24-.696 2.24-1.83v-.365h-6.72c-3.604 0-6.72-3.063-6.72-6.586v-4.39c0-3.523 3.116-6.585 6.72-6.585h4.107c.514 0 1.074.405 1.437.731l1.177 1.098V6.95c0-.483.625-1.097 1.12-1.097h2.24c.496 0 1.12.613 1.12 1.097zM4.481 16.83c0 1.134 1.08 2.195 2.24 2.195h6.72v-8.78h-6.72c-1.16 0-2.24 1.061-2.24 2.195v4.39zM16.8 0c.497 0 1.121.613 1.121 1.098v21.22c0 .483-.624 1.097-1.12 1.097h-2.24c-.496 0-1.12-.613-1.12-1.098v-.732l-1.175 1.232c-.318.346-.932.598-1.44.598H6.722C3.117 23.415 0 20.352 0 16.829v-4.356c0-3.523 3.117-6.62 6.72-6.62h6.722V1.099c0-.485.624-1.098 1.12-1.098h2.24zm46.3 14.634L69.336 6.9c.347-.421.04-1.048-.513-1.048h-3.566c-.27 0-.525.119-.696.323l-6.314 7.727V1.098c0-.485-.625-1.098-1.12-1.098h-2.24c-.496 0-1.12.613-1.12 1.098v21.22c0 .483.624 1.097 1.12 1.097h2.24c.495 0 1.12-.614 1.12-1.098v-6.951l6.317 7.744c.17.207.428.328.7.328h3.562c.554 0 .86-.627.514-1.048l-6.24-7.756zM48.166 0c-.496 0-1.12.613-1.12 1.098v2.195c0 .484.624 1.097 1.12 1.097h2.24c.495 0 1.12-.613 1.12-1.097V1.098c0-.485-.625-1.098-1.12-1.098h-2.24zm0 5.854c-.496 0-1.12.613-1.12 1.097v15.366c0 .484.8 1.12 1.295 1.12l2.065-.022c.495 0 1.12-.614 1.12-1.098V6.951c0-.484-.625-1.097-1.12-1.097h-2.24zM21.282 0c-.495 0-1.12.613-1.12 1.098v2.195c0 .484.625 1.097 1.12 1.097h2.24c.496 0 1.12-.613 1.12-1.097V1.098c0-.485-.624-1.098-1.12-1.098h-2.24zm0 5.854c-.495 0-1.12.613-1.12 1.097v15.366c0 .484.625 1.098 1.12 1.098h2.24c.496 0 1.12-.614 1.12-1.098V6.951c0-.484-.624-1.097-1.12-1.097h-2.24zm73.556-4.756v21.22c0 .483-.625 1.097-1.12 1.097h-2.24c-.496 0-1.12-.614-1.12-1.098V1.097c0-.484.624-1.097 1.12-1.097h2.24c.495 0 1.12.613 1.12 1.098z" transform="translate(-1235 -19) translate(-238) translate(1473 19)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg></a>
+            </div>
+    
+            <br>
+            <br>
+        <hr>
+    <center>
+        <h2>
+            <i class="fa-regular fa-badge-percent"></i> محصولات
+        </h2>
+    </center>
+
+    <div class="add"><a href="/add_product"><button type="submit" class="btn btn-outline-danger">افزودن محصول</button></a></div>
+    <div class="container">
+        {% for item in product_list %}
+        <div class="product">
+            <a href="/product/post?post_id={{ item[0] }}">
+                <img src="{{ item[3] }}" alt="تصویر محصول" />
+                <div class="discount">{{ item[5] }}</div>
+                <div class="price">{{ item[4] }} تومان</div>
+                <div class="price">نام محصول : {{ item[1] }}</div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

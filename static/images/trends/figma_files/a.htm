@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="connect-src blob: data: https://api.sprig.com https://cdn.sprig.com;
+        font-src data: https://fonts.gstatic.com;
+        worker-src blob:;">
+  </head>
+  <body>
+    <script async="" src="a_data/shim.js"></script><script>
+      let localStorageOrNull = null
+      try {
+        localStorageOrNull = window.localStorage
+      } catch {}
+
+      const SPRIG_IDS_LOCAL_STORAGE_KEY = 'userleap.ids'
+      const SESSION_CREATED_AT_LOCAL_STORAGE_KEY = 'sprig_session_created_at'
+      const REQUEST_PERMISSION_TO_SHOW_SURVEY_TIMEOUT_MS = 250
+
+      const MessageType = {
+        SDKReady: 'sdkReady',
+        Call: 'call',
+        SetProperty: 'setProperty',
+        GetProperty: 'getProperty',
+        SetContainerDimensions: 'setContainerDimensions',
+        Error: 'error',
+        GetPermissionToShowSurvey: 'getPermissionToShowSurvey',
+        SurveyClosed: 'surveyClosed',
+      }
+
+      function arrayEquals(a, b) {
+        return (
+          Array.isArray(a) &&
+          Array.isArray(b) &&
+          a.length === b.length &&
+          a.every((val, index) => val === b[index])
+        )
+      }
+
+      ;(function (parentUrl, invalidateSessionsOlderThan) {
+        function messageParent(message) {
+          if (!parent) throw new Error('Tried to message inexistent parent')
+          console.debug(`[Sprigma] 📦 Sending message to parent at ${parentUrl}:`, message)
+          parent.postMessage(message, parentUrl)
+        }
+
+        function setContainerDimensions(height, width) {
+          console.debug(
+            `[Sprigma] 📦 Setting container dimensions: height=${
+              height === undefined ? 'unchanged' : height
+            } width=${width === undefined ? 'unchanged' : width}`,
+          )
+          messageParent({
+            type: MessageType.SetContainerDimensions,
+            content: {
+              height,
+              width,
+            },
+          })
+        }
+
+        let isSDKReady = false
+        const startTime = Date.now()
+        const busyWaitForWindowSprig = setInterval(function () {
+          if (window.Sprig && window.Sprig.UPDATES) {
+            console.debug(
+              `[Sprigma] 📦 Detected that window.Sprig is now available, time elapsed: ${
+                Date.now() - startTime
+              }ms`,
+            )
+            window.Sprig.maxHeight = '100vh'
+
+            window.Sprig('addListener', window.Sprig.UPDATES.SDK_READY, function () {
+              const timeElapsed = Date.now() - startTime
+              console.debug(`[Sprigma] 📦 Sprig SDK reported readiness, time elapsed: ${timeElapsed}ms`)
+
+              // Potentially invalidate existing Sprig session if it's older than threshold
+              if (localStorageOrNull && localStorageOrNull.getItem(SPRIG_IDS_LOCAL_STORAGE_KEY) !== null) {
+                const sessionCreatedAt = parseInt(
+                  localStorageOrNull.getItem(SESSION_CREATED_AT_LOCAL_STORAGE_KEY),
+                  10,
+                )
+                if (Number.isNaN(sessionCreatedAt) || sessionCreatedAt < invalidateSessionsOlderThan) {
+                  console.debug('[Sprigma] 📦 Invalidating existing session', {
+                    sessionCreatedAt,
+                    invalidateSessionsOlderThan,
+                  })
+                  window.Sprig('logoutUser')
+                  try {
+                    localStorageOrNull.setItem(SESSION_CREATED_AT_LOCAL_STORAGE_KEY, Date.now())
+                  } catch {}
+                }
+              }
+
+              messageParent({ type: MessageType.SDKReady, content: { timeToReadinessInMs: timeElapsed } })
+              isSDKReady = true
+            })
+            window.Sprig('addListener', window.Sprig.UPDATES.SURVEY_PRESENTED, function () {
+              console.debug('[Sprigma] 📦 Sprig SDK reported that a survey has presented')
+              let surveyIframe, height, width
+              const busyWaitForDimensions = setInterval(function () {
+                if (!surveyIframe) {
+                  surveyIframe = document.getElementById(window.Sprig.frameId)
+                }
+                if (height === undefined && surveyIframe && surveyIframe.style.height) {
+                  height = surveyIframe.style.height
+                }
+                if (width === undefined && surveyIframe && surveyIframe.style.width) {
+                  width = surveyIframe.style.width
+                }
+                if (height && width) {
+                  setContainerDimensions(height, width)
+                  clearInterval(busyWaitForDimensions)
+                }
+              }, 1)
+            })
+            window.Sprig('addListener', window.Sprig.UPDATES.SURVEY_HEIGHT, function (data) {
+              console.debug('[Sprigma] 📦 Sprig SDK reported that survey height has changed')
+              setContainerDimensions(data.contentFrameHeight)
+            })
+            window.Sprig('addListener', window.Sprig.UPDATES.SURVEY_CLOSED, function () {
+              console.debug('[Sprigma] 📦 Sprig SDK reported that a survey has closed')
+              setContainerDimensions(0, 0)
+              messageParent({ type: MessageType.SurveyClosed })
+            })
+
+            clearInterval(busyWaitForWindowSprig)
+          }
+        }, 1)
+
+        function expectSprigSDKToBeReady() {
+          if (!isSDKReady) throw new Error('Expected Sprig SDK to be ready when it’s not')
+        }
+
+        const outstandingRequestsForPermissionToShowSurvey = {}
+        async function requestPermissionToShowSurvey(surveyId) {
+          console.debug(`[Sprigma] 📦 Requesting permission to show survey ${surveyId}`)
+          messageParent({
+            type: MessageType.GetPermissionToShowSurvey,
+            content: {
+              surveyId,
+            },
+          })
+
+          let promise
+          promise = new Promise((resolve) => {
+            const timeout = setTimeout(() => {
+              console.warn(
+                `[Sprigma] 📦 Timed out waiting for parent to grant permission to show survey ${surveyId} after ${REQUEST_PERMISSION_TO_SHOW_SURVEY_TIMEOUT_MS}ms, not showing`,
+              )
+              resolve(false)
+            }, REQUEST_PERMISSION_TO_SHOW_SURVEY_TIMEOUT_MS)
+
+            const callback = (canShow) => {
+              clearTimeout(timeout)
+              console.debug(
+                `[Sprigma] 📦 Signaling Sprig SDK to ${
+                  canShow ? 'allow' : 'deny'
+                } survey ${surveyId} to show`,
+              )
+              resolve(canShow)
+            }
+
+            if (outstandingRequestsForPermissionToShowSurvey[surveyId]) {
+              console.warn(
+                `[Sprigma] 📦 Request for permission to show survey ${surveyId} is already in progress`,
+              )
+              // Chaining the outcome of this request to the existing request for the same survey
+              outstandingRequestsForPermissionToShowSurvey[surveyId].promise =
+                outstandingRequestsForPermissionToShowSurvey[surveyId].promise.then(callback)
+            } else {
+              outstandingRequestsForPermissionToShowSurvey[surveyId] = { promise, callback }
+            }
+          }).finally(() => {
+            outstandingRequestsForPermissionToShowSurvey[surveyId] = undefined
+          })
+
+          return await promise
+        }
+
+        function call(...args) {
+          expectSprigSDKToBeReady()
+          const modifiedArgs = [...args]
+
+          if (args.length >= 2) {
+            if (args[0] === 'track') {
+              while (modifiedArgs.length < 4) {
+                modifiedArgs.push(undefined)
+              }
+              modifiedArgs.push(requestPermissionToShowSurvey)
+            } else if (args[0] === 'identifyAndTrack') {
+              if (args[1] === undefined || args[1] === null || args[1].constructor !== Object)
+                throw Error(`Expected second argument of Sprig('identifyAndTrack', ...) to be an object`)
+              modifiedArgs[1] = { ...modifiedArgs[1], showSurveyCallback: requestPermissionToShowSurvey }
+            } else if (args[0] === 'trackPageView') {
+              while (modifiedArgs.length < 3) {
+                modifiedArgs.push(undefined)
+              }
+              modifiedArgs.push(requestPermissionToShowSurvey)
+            }
+          }
+
+          if (!arrayEquals(args, modifiedArgs)) {
+            console.debug(`[Sprigma] 📦 Call arguments have been modified:`, modifiedArgs)
+          }
+          window.Sprig(...modifiedArgs)
+        }
+
+        function getProperty(name) {
+          expectSprigSDKToBeReady()
+          return window.Sprig[name]
+        }
+
+        function setProperty(name, value) {
+          expectSprigSDKToBeReady()
+          window.Sprig[name] = value
+        }
+
+        function processMessage(message) {
+          const { type, content } = message || {}
+
+          if (!type || !content) {
+            console.warn('[Sprigma] 📦 Ignoring malformed message:', message)
+            return
+          }
+
+          switch (type) {
+            case MessageType.Call: {
+              const { args } = content || {}
+              if (!Array.isArray(args))
+                throw new Error(
+                  `Field 'args' must be provided and be an array for '${MessageType.Call}' messages`,
+                )
+              console.debug('[Sprigma] 📦 Calling Sprig() with args:', args)
+              call(...args)
+              break
+            }
+
+            case MessageType.GetProperty: {
+              const { name } = content || {}
+              if (!name)
+                throw new Error(`Field 'name' must be provided for '${MessageType.GetProperty}' messages`)
+              console.debug(
+                `[Sprigma] 📦 Getting property Sprig.${name}, which currently has value:`,
+                getProperty(name),
+              )
+              messageParent({
+                type: MessageType.GetProperty,
+                content: {
+                  name,
+                  value: getProperty(name),
+                },
+              })
+              break
+            }
+
+            case MessageType.SetProperty: {
+              const { name, value } = content || {}
+              if (!name)
+                throw new Error(`Field 'name' must be provided for '${MessageType.SetProperty}' messages`)
+              if (value === undefined)
+                throw new Error(`Field 'value' must be provided for '${MessageType.SetProperty}' messages`)
+              console.debug(`[Sprigma] 📦 Setting property Sprig.${name} to value:`, value)
+              setProperty(name, value)
+              break
+            }
+
+            case MessageType.GetPermissionToShowSurvey: {
+              const { surveyId, canShow } = content || {}
+              if (!surveyId)
+                throw new Error(
+                  `Field 'surveyId' must be provided for '${MessageType.GetPermissionToShowSurvey}' messages`,
+                )
+              if (canShow === undefined)
+                throw new Error(
+                  `Field 'canShow' must be provided for '${MessageType.GetPermissionToShowSurvey}' messages`,
+                )
+              console.debug(
+                `[Sprigma] 📦 Received message from parent regarding permission to show survey ${surveyId}, canShow = ${canShow}`,
+              )
+              if (outstandingRequestsForPermissionToShowSurvey[surveyId]) {
+                outstandingRequestsForPermissionToShowSurvey[surveyId].callback(canShow)
+              } else {
+                console.debug(
+                  `[Sprigma] 📦 Outstanding request for permission to show survey ${surveyId} was not found. It may have timed out`,
+                )
+              }
+              break
+            }
+
+            default:
+              throw new Error(`Unknown message of type ${type} received`)
+          }
+        }
+
+        window.addEventListener('message', function (event) {
+          console.debug(`[Sprigma] 📦 Message received from ${event.origin}`)
+
+          if (event.origin !== parentUrl) {
+            console.warn(`[Sprigma] 📦 Ignoring message from unexpected origin ${event.origin}`)
+            return
+          }
+          if (!isSDKReady) {
+            console.warn('[Sprigma] 📦 Received message when Sprig SDK is not yet ready')
+            return
+          }
+          processMessage(event.data)
+        })
+
+        window.addEventListener('error', function (error) {
+          console.error(`[Sprigma] 📦 ${error.message}`)
+          messageParent({
+            type: MessageType.Error,
+            content: {
+              message: error.message,
+              filename: error.filename,
+              lineno: error.lineno,
+              colno: error.colno,
+            },
+          })
+        })
+      })('https://www.figma.com', 1686806888888)
+    </script>
+    <script>
+      (function(l,e,a,p) {
+        if (window.Sprig) return;
+        window.Sprig = function(){S._queue.push(arguments)}
+        var S = window.Sprig;S.appId = a;S._queue = [];window.UserLeap=S;
+        a=l.createElement('script');
+        a.async=1;a.src=e+'?id='+S.appId;
+        p=l.getElementsByTagName('script')[0];
+        p.parentNode.insertBefore(a, p);
+      })(document, 'https://cdn.sprig.com/shim.js', 'YWwyCyGyqg');
+    </script>
+  
+
+</body></html>
